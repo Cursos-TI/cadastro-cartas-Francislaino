@@ -16,6 +16,7 @@ int main() {
   float area1;
   float pib1;
   int pontosTuristicos1;
+  
 
   // declaração de variáveis da segunda carta
   char estado2;
@@ -37,7 +38,9 @@ int main() {
   scanf("%s", codigo1);
 
   printf("digite o nome da cidade:\n");
-  scanf("%s", cidade1);
+  getchar(); // limpa o ENTER anterior
+  fgets(cidade1, 20, stdin);
+  cidade1[strcspn(cidade1, "\n")] = 0;
 
   printf("digite a população:\n");
   scanf("%d", &populacao1);
@@ -60,7 +63,9 @@ int main() {
   scanf("%s", codigo2);
 
   printf("digite o nome da cidade:\n");
-  scanf("%s", cidade2);
+  getchar();
+  fgets(cidade2, 20, stdin);
+  cidade2[strcspn(cidade2, "\n")] = 0;
 
   printf("digite a população:\n");
   scanf("%d", &populacao2);
@@ -76,6 +81,7 @@ int main() {
 
   // Área para exibição dos dados da cidade
   printf("===carta 1===\n");
+  printf("Estado: %c\n" , estado1);
   printf("Código: %s\n", codigo1);
   printf("Cidade: %s\n", cidade1);
   printf("População: %d de pessoas\n", populacao1);
@@ -91,7 +97,6 @@ int main() {
   printf("Área: %.2f km²\n", area2);
   printf("PIB: %.2f bilhões de reais\n", pib2);
   printf("Numero de Pontos Turísticos: %d\n", pontosTuristicos2);
-  printf("Estado: %c\n" , estado1);
-
+  
   return 0;
 } 
